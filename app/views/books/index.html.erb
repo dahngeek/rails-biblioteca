@@ -20,7 +20,7 @@
         <td><%= book.description %></td>
         <td><%= book.pages %></td>
         <td><%= book.author.name + " " + book.author.lastname %></td>
-        <td><%= book.topic.name %></td>
+        <td><%= book.topic.map(&:name).join(", ") %></td>
         <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>

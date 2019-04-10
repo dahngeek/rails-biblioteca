@@ -32,8 +32,11 @@
   </div>
 
   <div class="field">
-    <%= form.label :topic_id %>
-    <%= form.text_field :topic_id %>
+    <%= form.label :topics %>
+    <%= collection_check_boxes(:book, :topic_ids, Topic.all, :id, :name) do |b|
+      b.label(:"data-value" => b.value) {b.check_box + b.text}  
+    end
+    %>
   </div>
 
   <div class="actions">

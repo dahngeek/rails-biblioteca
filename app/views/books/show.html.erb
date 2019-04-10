@@ -21,8 +21,12 @@
 </p>
 
 <p>
-  <strong>Topic:</strong>
-  <%= @book.topic.name %>
+  <strong>Topics:</strong>
+  <ul>
+  <% @book.topic.each do |t| %>
+    <li><%= t.name %></li>
+  <% end %>
+  </ul>
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
